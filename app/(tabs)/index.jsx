@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React, { useState, useRef, useEffect } from "react";
 import {
   View,
@@ -27,14 +28,14 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("./assets/logo.png")} style={styles.logo} />
+        {/* <Image source={require("./assets/logo.png")} style={styles.logo} /> */}
         <TouchableOpacity onPress={toggleMenu}>
           <Text style={styles.menuButton}>☰</Text>
         </TouchableOpacity>
       </View>
 
       <Animated.View
-        style={[styles.menu, { transform: [{ translateY: slideAnim }] }]}
+        style={[styles.menu, { transform: [{ translateY: slideAnimation }] }]}
       >
         <TouchableOpacity onPress={toggleMenu}>
           <Text style={styles.closeButton}>✖</Text>
@@ -44,10 +45,11 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.menuItem}>Ogłoszenia</Text>
         <Text style={styles.menuItem}>Kontakt</Text>
         <Text style={styles.menuItem}>Wykładowcy</Text>
+        <Link href="/about">About Us</Link>
       </Animated.View>
 
       <View style={styles.body}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.tile}
           onPress={() => navigation.navigate("Screen1")}
         >
@@ -58,7 +60,7 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Screen2")}
         >
           <Text>Go to Screen 2</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   );
