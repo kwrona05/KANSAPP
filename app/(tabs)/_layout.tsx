@@ -17,9 +17,45 @@ export default function RootLayout() {
           ),
         }}
       />
-      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
-      <Tabs.Screen name="map" options={{ title: "Mapa KANS" }} />
-      <Tabs.Screen name="lessons" options={{ title: "Plan zajęć" }} />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "people-sharp" : "people-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="map"
+        options={{
+          title: "Mapa KANS",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "map-sharp" : "map-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="lessons"
+        options={{
+          title: "Plan zajęć",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "calendar-sharp" : "calendar-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
