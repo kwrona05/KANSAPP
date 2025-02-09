@@ -1,17 +1,17 @@
-import { Link } from "expo-router";
 import React, { useState, useRef, useEffect } from "react";
 import {
   View,
   Text,
-  Image,
   TouchableOpacity,
   StyleSheet,
   Animated,
   ScrollView,
+  Pressable,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
+  const navigation = useNavigation();
   const [menuVisible, setMenuVisible] = useState(false);
   const slideAnimation = useRef(new Animated.Value(-1000)).current;
 
@@ -30,7 +30,6 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        {/* <Image source={require("./assets/logo.png")} style={styles.logo} /> */}
         <TouchableOpacity onPress={toggleMenu}>
           <Text style={styles.menuButton}>☰</Text>
         </TouchableOpacity>
@@ -45,30 +44,50 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.menuItem}>Plan zajęć</Text>
         <Text style={styles.menuItem}>Mapa KANS</Text>
         <Text style={styles.menuItem}>Ogłoszenia</Text>
-        <Text style={styles.menuItem}>Kontakt</Text>
+
+        <Pressable onPress={() => navigation.navigate("Contact")}>
+          <Text style={styles.menuItem}>Kontakt</Text>
+        </Pressable>
+
         <Text style={styles.menuItem}>Wykładowcy</Text>
-        <Link href="/about">About Us</Link>
+        <Pressable onPress={() => navigation.navigate("About")}>
+          <Text style={styles.menuItem}>About Us</Text>
+        </Pressable>
       </Animated.View>
 
       <ScrollView contentContainerStyle={styles.body}>
-        <View style={styles.tile}>
-          {/* Image element*/}
-          <Text style={styles.tileText}>Ogłoszenia</Text>
-        </View>
-        <View style={styles.tile}>
-          {/* Image element*/}
-          <Text style={styles.tileText}>Wykładowcy</Text>
-        </View>
-        <TouchableOpacity
+        <Pressable
+          style={styles.tile}
+          onPress={() => navigation.navigate("Announcement")}
+        >
+          <View>
+            <Text style={styles.tileText}>Ogłoszenia</Text>
+          </View>
+        </Pressable>
+        <Pressable
+          style={styles.tile}
+          onPress={() => navigation.navigate("Teachers")}
+        >
+          <View>
+            <Text style={styles.tileText}>Wykładowcy</Text>
+          </View>
+        </Pressable>
+        <Pressable
           style={styles.tile}
           onPress={() => navigation.navigate("Contact")}
-          title="Kontakt"
         >
-          <Text style={styles.tileText}>Kontakt</Text>
-        </TouchableOpacity>
-        <View style={styles.tile}>
-          <Text style={styles.tileText}>Mapa</Text>
-        </View>
+          <View>
+            <Text>Kontakt</Text>
+          </View>
+        </Pressable>
+        <Pressable
+          style={styles.tile}
+          onPress={() => navigation.navigate("Map")}
+        >
+          <View>
+            <Text style={styles.tileText}>Mapa</Text>
+          </View>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -83,11 +102,9 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#007AFF",
   },
-  logo: { width: 100, height: 40, resizeMode: "contain" },
   menuButton: { fontSize: 24, color: "#fff" },
   body: {
     flex: 1,
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     gap: 30,
@@ -101,23 +118,22 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.8)",
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 5,
   },
   closeButton: { fontSize: 24, color: "#fff", marginBottom: 20 },
   menuItem: { fontSize: 20, color: "#fff", marginVertical: 10 },
-
   tile: {
     width: "90%",
     height: "20%",
-    alignContent: "center",
-    textAlign: "center",
     borderWidth: 2,
     borderColor: "black",
     borderRadius: 10,
     backgroundColor: "lightgray",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: -1,
   },
-  tileText: {
-    textAlign: "center",
-  },
+  tileText: { textAlign: "center" },
 });
 
 export default HomeScreen;
