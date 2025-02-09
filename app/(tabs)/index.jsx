@@ -7,7 +7,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   Animated,
+  ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = ({ navigation }) => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -48,20 +50,26 @@ const HomeScreen = ({ navigation }) => {
         <Link href="/about">About Us</Link>
       </Animated.View>
 
-      <View style={styles.body}>
-        {/* <TouchableOpacity
-          style={styles.tile}
-          onPress={() => navigation.navigate("Screen1")}
-        >
-          <Text>Go to Screen 1</Text>
-        </TouchableOpacity>
+      <ScrollView contentContainerStyle={styles.body}>
+        <View style={styles.tile}>
+          {/* Image element*/}
+          <Text style={styles.tileText}>Ogłoszenia</Text>
+        </View>
+        <View style={styles.tile}>
+          {/* Image element*/}
+          <Text style={styles.tileText}>Wykładowcy</Text>
+        </View>
         <TouchableOpacity
           style={styles.tile}
-          onPress={() => navigation.navigate("Screen2")}
+          onPress={() => navigation.navigate("Contact")}
+          title="Kontakt"
         >
-          <Text>Go to Screen 2</Text>
-        </TouchableOpacity> */}
-      </View>
+          <Text style={styles.tileText}>Kontakt</Text>
+        </TouchableOpacity>
+        <View style={styles.tile}>
+          <Text style={styles.tileText}>Mapa</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -77,8 +85,13 @@ const styles = StyleSheet.create({
   },
   logo: { width: 100, height: 40, resizeMode: "contain" },
   menuButton: { fontSize: 24, color: "#fff" },
-  body: { flex: 1, justifyContent: "center", alignItems: "center" },
-  tile: { padding: 20, backgroundColor: "#ddd", margin: 10, borderRadius: 10 },
+  body: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 30,
+  },
   menu: {
     position: "absolute",
     top: 0,
@@ -91,6 +104,20 @@ const styles = StyleSheet.create({
   },
   closeButton: { fontSize: 24, color: "#fff", marginBottom: 20 },
   menuItem: { fontSize: 20, color: "#fff", marginVertical: 10 },
+
+  tile: {
+    width: "90%",
+    height: "20%",
+    alignContent: "center",
+    textAlign: "center",
+    borderWidth: 2,
+    borderColor: "black",
+    borderRadius: 10,
+    backgroundColor: "lightgray",
+  },
+  tileText: {
+    textAlign: "center",
+  },
 });
 
 export default HomeScreen;
