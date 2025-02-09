@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Contact from "./(tabs)/contact";
+import Contact from "./Contact";
 
 const Stack = createNativeStackNavigator();
 
