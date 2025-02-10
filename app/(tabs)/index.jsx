@@ -3,12 +3,13 @@ import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet,
   Animated,
   ScrollView,
   Pressable,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { styles } from "../styles/index_styles";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -33,6 +34,10 @@ const HomeScreen = () => {
         <TouchableOpacity onPress={toggleMenu}>
           <Text style={styles.menuButton}>☰</Text>
         </TouchableOpacity>
+        <Text>KANS</Text>
+        <Pressable onPress={() => navigation.navigate("Profile")}>
+          <Ionicons name={"person-circle-outline"} color={"black"} size={40} />
+        </Pressable>
       </View>
 
       <Animated.View
@@ -41,15 +46,22 @@ const HomeScreen = () => {
         <TouchableOpacity onPress={toggleMenu}>
           <Text style={styles.closeButton}>✖</Text>
         </TouchableOpacity>
-        <Text style={styles.menuItem}>Plan zajęć</Text>
-        <Text style={styles.menuItem}>Mapa KANS</Text>
-        <Text style={styles.menuItem}>Ogłoszenia</Text>
-
-        <Pressable onPress={() => navigation.navigate("Contact")}>
-          <Text style={styles.menuItem}>Kontakt</Text>
+        <Pressable onPress={() => navigation.navigate("lessonsPlan")}>
+          <Text style={styles.menuItem}>Plan zajęć</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("map")}>
+          <Text style={styles.menuItem}>Mapa KANS</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Announcement")}>
+          <Text style={styles.menuItem}>Ogłoszenia</Text>
         </Pressable>
 
-        <Text style={styles.menuItem}>Wykładowcy</Text>
+        <Pressable onPress={() => navigation.navigate("contact")}>
+          <Text style={styles.menuItem}>Kontakt</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Teachers")}>
+          <Text style={styles.menuItem}>Wykładowcy</Text>
+        </Pressable>
         <Pressable onPress={() => navigation.navigate("About")}>
           <Text style={styles.menuItem}>About Us</Text>
         </Pressable>
@@ -92,48 +104,5 @@ const HomeScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f8f8f8" },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "#007AFF",
-  },
-  menuButton: { fontSize: 24, color: "#fff" },
-  body: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 30,
-  },
-  menu: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 5,
-  },
-  closeButton: { fontSize: 24, color: "#fff", marginBottom: 20 },
-  menuItem: { fontSize: 20, color: "#fff", marginVertical: 10 },
-  tile: {
-    width: "90%",
-    height: "20%",
-    borderWidth: 2,
-    borderColor: "black",
-    borderRadius: 10,
-    backgroundColor: "lightgray",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: -1,
-  },
-  tileText: { textAlign: "center" },
-});
 
 export default HomeScreen;
