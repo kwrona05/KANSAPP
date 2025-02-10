@@ -44,12 +44,25 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="lessons"
+        name="lessonsPlan"
         options={{
           title: "Plan zajęć",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "calendar-sharp" : "calendar-outline"}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="contact"
+        options={{
+          title: "Kontakt",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "phone-portrait-sharp" : "phone-portrait-outline"}
               color={color}
               size={24}
             />
