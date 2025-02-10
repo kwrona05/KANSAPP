@@ -18,12 +18,12 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="announcement"
         options={{
-          title: "Profile",
+          title: "Ogłoszenia",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "people-sharp" : "people-outline"}
+              name={focused ? "megaphone-sharp" : "megaphone-outline"}
               color={color}
               size={24}
             />
