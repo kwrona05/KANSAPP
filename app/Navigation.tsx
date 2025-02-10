@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import Map from "./Map";
 import Announcement from "./Announcement";
 import Teachers from "./Teachers";
+import Profile from "./Profile";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="Announcement" component={Announcement} />
         <Stack.Screen name="Teachers" component={Teachers} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
