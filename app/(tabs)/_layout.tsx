@@ -11,7 +11,7 @@ export default function RootLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "home-sharp" : "home-outline"}
-              color={color}
+              color={"#E6007E"}
               size={24}
             />
           ),
@@ -24,7 +24,7 @@ export default function RootLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "megaphone-sharp" : "megaphone-outline"}
-              color={color}
+              color={"#E6007E"}
               size={24}
             />
           ),
@@ -37,7 +37,7 @@ export default function RootLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "map-sharp" : "map-outline"}
-              color={color}
+              color={"#E6007E"}
               size={24}
             />
           ),
@@ -50,7 +50,7 @@ export default function RootLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "calendar-sharp" : "calendar-outline"}
-              color={color}
+              color={"#E6007E"}
               size={24}
             />
           ),
@@ -63,7 +63,7 @@ export default function RootLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "phone-portrait-sharp" : "phone-portrait-outline"}
-              color={color}
+              color={"#E6007E"}
               size={24}
             />
           ),
