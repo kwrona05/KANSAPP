@@ -31,12 +31,25 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={toggleMenu}>
-          <Text style={styles.menuButton}>☰</Text>
-        </TouchableOpacity>
-        <Text>KANS</Text>
-        <Pressable onPress={() => navigation.navigate("Profile")}>
-          <Ionicons name={"person-circle-outline"} color={"black"} size={40} />
+        <Pressable
+          onPress={toggleMenu}
+          style={({ pressed }) => [
+            styles.menuButton,
+            pressed && styles.pressedMenu,
+          ]}
+        >
+          {/* <Text style={styles.menuButton}>☰</Text> */}
+          <Ionicons name={"menu-sharp"} color={"#FFFF"} size={40} />
+        </Pressable>
+        <Text style={styles.headerTitle}>KANS</Text>
+        <Pressable
+          style={({ pressed }) => [
+            styles.profileButton,
+            pressed && styles.pressedProfile,
+          ]}
+          onPress={() => navigation.navigate("Profile")}
+        >
+          <Ionicons name={"person-circle-outline"} color={"#FFFF"} size={40} />
         </Pressable>
       </View>
 
@@ -69,7 +82,7 @@ const HomeScreen = () => {
 
       <ScrollView contentContainerStyle={styles.body}>
         <Pressable
-          style={styles.tile}
+          style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
           onPress={() => navigation.navigate("Announcement")}
         >
           <View>
@@ -77,7 +90,7 @@ const HomeScreen = () => {
           </View>
         </Pressable>
         <Pressable
-          style={styles.tile}
+          style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
           onPress={() => navigation.navigate("Teachers")}
         >
           <View>
@@ -85,15 +98,15 @@ const HomeScreen = () => {
           </View>
         </Pressable>
         <Pressable
-          style={styles.tile}
+          style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
           onPress={() => navigation.navigate("Contact")}
         >
           <View>
-            <Text>Kontakt</Text>
+            <Text style={styles.tileText}>Kontakt</Text>
           </View>
         </Pressable>
         <Pressable
-          style={styles.tile}
+          style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
           onPress={() => navigation.navigate("Map")}
         >
           <View>
