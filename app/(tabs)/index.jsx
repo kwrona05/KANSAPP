@@ -75,9 +75,6 @@ const HomeScreen = () => {
         <Pressable onPress={() => navigation.navigate("Teachers")}>
           <Text style={styles.menuItem}>Wykładowcy</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate("About")}>
-          <Text style={styles.menuItem}>About Us</Text>
-        </Pressable>
       </Animated.View>
 
       <ScrollView contentContainerStyle={styles.body}>
