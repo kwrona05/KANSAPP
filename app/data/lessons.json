@@ -1,0 +1,33 @@
+{
+    "monday": [
+        {"subject": "Socjologia", "time": "8:00-9:30", "category": "Wyk"},
+        {"subject": "Podstawy IT", "time": "9:40-11:20", "category": "War"},
+        {"subject": "Angielski", "time": "11:30-13:00", "category": "ĆW"},
+        {"subject": "Matematyka", "time": "13:10-14:40", "category": "ĆW"}
+    ],
+
+    "tuesday": [
+        {"subject": "Psychologia", "time": "8:00-9:30", "category": "Wyk"},
+        {"subject": "Psychologia", "time": "9:40-11:20", "category": "ĆW"},
+        {"subject": "Ekonomia", "time": "11:30-13:00", "category": "ĆW"},
+        {"subject": "Zarządzanie", "time": "13:10-14:40", "category": "ĆW"},
+        {"subject": "Negocjacje", "time": "14:50-16:20", "category": "War"}
+    ],
+    
+    "Wednesday": [
+        {"subject": "WOLNE"}
+    ],
+
+    "Thursday": [
+        {"subject": "Socjologia", "time": "9:40-11:20", "category": "Wyk"},
+        {"subject": "Matematyka", "time": "11:30-13:00", "category": "ĆW"},
+        {"subject": "Matematyka", "time": "14:50-16:20", "category": "ĆW"},
+        {"subject": "Filozofia", "time": "14:50-16:20", "category": "Wyk"}
+    ],
+
+    "Friday": [
+        {"subject": "Ekonomia", "time": "9:40-11:20", "category": "Wyk"},
+        {"subject": "Matematyka", "time": "11:30-13:00", "category": "ĆW"},
+        {"subject": "Zarządzanie", "time": "14:50-16:20", "category": "Wyk"}
+    ]
+}
