@@ -20,25 +20,25 @@ export default function Calendar() {
   return (
     <GestureHandlerRootView>
       <View style={styles.container}>
-        <Text>Plan lekcji</Text>
+        <Text style={styles.title}>Plan lekcji</Text>
         <FlatList
+          style={styles.flatlist}
           data={data}
           keyExtractor={(item) => item.day}
           renderItem={({ item }) => (
             <View style={styles.dayContainer}>
-              <Text>{item.day.toUpperCase()}</Text>
+              <Text style={styles.dayTitle}>{item.day.toUpperCase()}</Text>
               <FlatList
                 data={item.lessons}
                 keyExtractor={(lessons, index) => index.toString()}
                 renderItem={({ item: lesson }) => (
-                  <View>
+                  <View style={styles.subjectContainer}>
                     {lesson.subject === "WOLNE" ? (
-                      <Text>Dzień wolny !!!</Text>
+                      <Text style={styles.subject}>Dzień wolny !!!</Text>
                     ) : (
                       <>
-                        <Text>{lesson.subject}</Text>
-                        <Text>
-                          {lesson.time} | {lesson.category}
+                        <Text style={styles.subject}>
+                          {lesson.subject} | {lesson.time} | {lesson.category}
                         </Text>
                       </>
                     )}
@@ -56,14 +56,23 @@ export default function Calendar() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "column",
+    gap: 10,
     borderWidth: 1,
     borderRadius: 10,
     borderColor: "#E6007E",
+    backgroundColor: "#163A6D",
+  },
+  flatlist: {
+    flex: 0,
+    flexDirection: "column",
+    gap: 10,
   },
   dayContainer: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: "column",
     gap: 10,
+    backgroundColor: "lightgray",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#E6007E",
@@ -72,5 +81,17 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 5 },
     shadowRadius: 6,
     padding: 10,
+  },
+  title: {
+    flex: 1,
+    justifyContent: "center",
+    color: "#E6007E",
+    fontSize: 28,
+  },
+  dayTitle: {
+    flex: 1,
+    justifyContent: "center",
+    color: "#E6007E",
+    fontSize: 14,
   },
 });
