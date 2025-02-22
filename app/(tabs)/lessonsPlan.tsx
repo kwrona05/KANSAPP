@@ -4,11 +4,17 @@ import { FlatList, GestureHandlerRootView } from "react-native-gesture-handler";
 import lessons from "../data/lessons.json";
 import { StyleSheet } from "react-native";
 import { wrap } from "module";
+
 export default function Calendar() {
-  const [data, setData] = useState<string[]>([]);
+  const [data, setData] = useState<{ day: string; lessons: any[] }[]>([]);
 
   useEffect(() => {
-    setData(lessons.monday);
+    const iteratedData = Object.entries(lessons).map(([day, lessons]) => ({
+      day,
+      lessons,
+    }));
+
+    setData(iteratedData);
   }, []);
 
   return (
@@ -17,13 +23,28 @@ export default function Calendar() {
         <Text>Plan lekcji</Text>
         <FlatList
           data={data}
-          keyExtractor={(item, index) => index.toString()}
+          keyExtractor={(item) => item.day}
           renderItem={({ item }) => (
             <View style={styles.dayContainer}>
-              <Text>{item.subject}</Text>
-              <Text>
-                {item.time} - {item.category}
-              </Text>
+              <Text>{item.day.toUpperCase()}</Text>
+              <FlatList
+                data={item.lessons}
+                keyExtractor={(lessons, index) => index.toString()}
+                renderItem={({ item: lesson }) => (
+                  <View>
+                    {lesson.subject === "WOLNE" ? (
+                      <Text>Dzień wolny !!!</Text>
+                    ) : (
+                      <>
+                        <Text>{lesson.subject}</Text>
+                        <Text>
+                          {lesson.time} | {lesson.category}
+                        </Text>
+                      </>
+                    )}
+                  </View>
+                )}
+              />
             </View>
           )}
         />
