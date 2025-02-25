@@ -22,7 +22,6 @@ export default function Calendar() {
       <View style={styles.container}>
         <Text style={styles.title}>Plan lekcji</Text>
         <FlatList
-          style={styles.flatlist}
           data={data}
           keyExtractor={(item) => item.day}
           renderItem={({ item }) => (
@@ -53,48 +52,6 @@ export default function Calendar() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     flexDirection: "column",
-//     gap: 10,
-//     borderWidth: 1,
-//     borderRadius: 10,
-//     borderColor: "#E6007E",
-//     backgroundColor: "#163A6D",
-//   },
-//   flatlist: {
-//     flex: 0,
-//     flexDirection: "column",
-//     gap: 10,
-//   },
-//   dayContainer: {
-//     flex: 1,
-//     flexDirection: "column",
-//     gap: 10,
-//     backgroundColor: "lightgray",
-//     borderRadius: 10,
-//     borderWidth: 1,
-//     borderColor: "#E6007E",
-//     shadowColor: "#E6007E",
-//     shadowOpacity: 0.3,
-//     shadowOffset: { width: 0, height: 5 },
-//     shadowRadius: 6,
-//     padding: 10,
-//   },
-//   title: {
-//     flex: 1,
-//     justifyContent: "center",
-//     color: "#E6007E",
-//     fontSize: 28,
-//   },
-//   dayTitle: {
-//     flex: 1,
-//     justifyContent: "center",
-//     color: "#E6007E",
-//     fontSize: 14,
-//   },
-// });
 const styles = StyleSheet.create({
   container: {
     flex: 1,

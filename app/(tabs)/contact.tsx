@@ -1,19 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
-import { FlatList } from "react-native-gesture-handler";
+import { useState, useEffect } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import contact from "../data/contact.json";
 
 export default function Contact() {
+  const [data, setData] = useState();
   return (
-    <View>
+    <GestureHandlerRootView>
       <View>
-        <Text>WNHiS: 333 444 555</Text>
+        <Text>Kontakt</Text>
       </View>
-      <View>
-        <Text>WNMiT: 444 444 555</Text>
-      </View>
-      <View>
-        <Text>Biblioteka: 555 444 555</Text>
-      </View>
-    </View>
+    </GestureHandlerRootView>
   );
 }
