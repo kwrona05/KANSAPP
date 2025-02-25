@@ -65,7 +65,7 @@ const HomeScreen = () => {
         <Pressable onPress={() => navigation.navigate("map")}>
           <Text style={styles.menuItem}>Mapa KANS</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate("Announcement")}>
+        <Pressable onPress={() => navigation.navigate("announcement")}>
           <Text style={styles.menuItem}>Ogłoszenia</Text>
         </Pressable>
 
@@ -80,7 +80,7 @@ const HomeScreen = () => {
       <ScrollView contentContainerStyle={styles.body}>
         <Pressable
           style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
-          onPress={() => navigation.navigate("Announcement")}
+          onPress={() => navigation.navigate("announcement")}
         >
           <View>
             <Text style={styles.tileText}>Ogłoszenia</Text>
