@@ -1,5 +1,9 @@
 {
-    "WNHiS": {"756 453 304": ["BigData w analityce społecznej i ekonomicznej", "Filologia", "Marketing i komunikacja rynkowa"], "756 453 303": ["Biznes turystyczny", "Pedagogika", "Psychologia"]},
+    "WNHiS": {"phoneNumbers": ["756 453 304"]},
+    "BigData w analityce społecznej i ekonomicznej": {},
+    "Filologia": {"phoneNumbers": ["756 453 303"]}, "Marketing i komunikacja rynkowa": {"phoneNumbers": ["756 453 303"]},
+    "Biznes turystyczny": {}, 
+    "Pedagogika": {}, "Psychologia": {},
     "WNMiT": {"756 453 330": ["WF", "Pielęgniarstwo"], "756 453 332": ["Dietetyka", "Edukacja techniczno-informatyczna", "Fizjoterapia"]},
     "Biblioteka i Centrum Informacji Naukowej": "756 453 352",
     "Biuro Prawne Rektora/Prawnik Uczelni": "756 453 365",
@@ -8,5 +12,8 @@
     "Akademickie Biuro Karier": ["756 453 378", "biurokarier@kans.pl"],
     "Dział Promocji": ["756 453 312", "promocja@kans.pl"],
     "Akademicki Związek Sportowy": "756 453 361",
-    "Dom Studenta": ["756 453 390", "domstudenta@kans.pl"]
+    "Dom Studenta": {
+        "emails": ["domstudenta@kans.pl"],
+        "phoneNumbers": ["756 453 390"]
+    }
 }
