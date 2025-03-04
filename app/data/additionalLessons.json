@@ -1,0 +1,18 @@
+{
+    "wnhis": {
+    "Radio NaGłos": ["dr Paweł Greń"],
+    "SIMULACRUM": ["dr Karol Morawski"],
+    "Twoje koło": ["dr Jacek Trembecki"],
+    "Głos Studencki": ["dr hab. Ilona Biernacka-Ligięza", "mgr Krzysztof Wojtas"]
+    },
+    "wnmit": {
+        "ANTIDOTUM": ["wykładowca1"],
+        "BOLUS": ["wykładowca2"],
+        "KOŁO FIZJOLOGI WYSIŁKU": ["wykładowca3"],
+        "INTELEKKT": ["wykładowca4"],
+        "PARAMEDYK": ["wykładowca5"],
+        "PHYSIS": ["wykładowca6"],
+        "PROZDROWIE": ["wykładowca7"],
+        "KOŁO STUDENTÓW WF": ["wykładowca8"]
+    }
+}
