@@ -96,7 +96,7 @@ const HomeScreen = () => {
         </Pressable>
         <Pressable
           style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
-          onPress={() => navigation.navigate("Contact")}
+          onPress={() => navigation.navigate("contact")}
         >
           <View>
             <Text style={styles.tileText}>Kontakt</Text>
