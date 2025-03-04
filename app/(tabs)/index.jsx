@@ -73,7 +73,7 @@ const HomeScreen = () => {
           <Text style={styles.menuItem}>Kontakt</Text>
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Teachers")}>
-          <Text style={styles.menuItem}>Wykładowcy</Text>
+          <Text style={styles.menuItem}>Koła Naukowe</Text>
         </Pressable>
       </Animated.View>
 
