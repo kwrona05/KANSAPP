@@ -91,7 +91,7 @@ const HomeScreen = () => {
           onPress={() => navigation.navigate("Teachers")}
         >
           <View>
-            <Text style={styles.tileText}>Wykładowcy</Text>
+            <Text style={styles.tileText}>Koła naukowe</Text>
           </View>
         </Pressable>
         <Pressable
@@ -104,7 +104,7 @@ const HomeScreen = () => {
         </Pressable>
         <Pressable
           style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
-          onPress={() => navigation.navigate("Map")}
+          onPress={() => navigation.navigate("map")}
         >
           <View>
             <Text style={styles.tileText}>Mapa</Text>
