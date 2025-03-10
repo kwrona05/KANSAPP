@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Image } from "react-native";
 
 export default function Map() {
   return (
     <View>
-      <Text>Map will be here</Text>
+      <Image source={require("../assets/images/Unknown.jpg")} />
     </View>
   );
 }

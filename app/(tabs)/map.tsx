@@ -1,21 +1,27 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 
 export default function Map() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Here will be the map of the campus</Text>
+      <Image
+        source={require("../../assets/images/Unknown.jpg")}
+        style={styles.image}
+      />
     </View>
   );
 }
 
+const { width, height } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  text: {
-    fontSize: 28,
-    fontWeight: "bold",
-    textAlign: "center",
+  image: {
+    width: 100,
+    height: 200,
+    resizeMode: "contain",
   },
 });
