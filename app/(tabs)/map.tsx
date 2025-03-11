@@ -11,11 +11,11 @@ import { useState, useRef } from "react";
 
 export default function Map() {
   const [legendVisible, setLegendVisible] = useState(false);
-  const slideAnim = useRef(new Animated.Value(300)).current;
+  const slideAnim = useRef(new Animated.Value(800)).current;
 
   const toggleLegend = () => {
     Animated.timing(slideAnim, {
-      toValue: legendVisible ? 300 : 0,
+      toValue: legendVisible ? 800 : 0,
       duration: 300,
       useNativeDriver: true,
     }).start();
@@ -44,10 +44,30 @@ export default function Map() {
           { transform: [{ translateY: slideAnim }] },
         ]}
       >
-        <Text style={styles.legendItem}>📍 Biblioteka</Text>
-        <Text style={styles.legendItem}>🏫 Główne budynki</Text>
-        <Text style={styles.legendItem}>🌳 Park</Text>
-        <Text style={styles.legendItem}>🍽️ Stołówka</Text>
+        <Text style={styles.legendItem}>1. Rektorat</Text>
+        <Text style={styles.legendItem}>
+          2. Wydział nauk medycznych i technicznych
+        </Text>
+        <Text style={styles.legendItem}>
+          3. Wydział nauk medycznych i technicznych
+        </Text>
+        <Text style={styles.legendItem}>4. Parking dla studentów</Text>
+        <Text style={styles.legendItem}>5. Strefa imprez</Text>
+        <Text style={styles.legendItem}>9. Pływalnia</Text>
+        <Text style={styles.legendItem}>
+          11. Wydział Nauk Humanistycznych i Społecznych
+        </Text>
+        <Text style={styles.legendItem}>12. Administracja</Text>
+        <Text style={styles.legendItem}>
+          13. Bibliotek i Centrum Informacji Naukowej
+        </Text>
+        <Text style={styles.legendItem}>22. Hala sportowa</Text>
+        <Text style={styles.legendItem}>A. Akademik "POD JELENIEM"</Text>
+        <Text style={styles.legendItem}>B. Akademik "POD JELONKIEM"</Text>
+        <Text style={styles.legendItem}>
+          C. Kantyna Studencka "Pełna Micha"
+        </Text>
+        <Text style={styles.legendItem}>D. Przedszkole "Mali Odkrywcy"</Text>
       </Animated.View>
     </View>
   );
@@ -101,12 +121,11 @@ const styles = StyleSheet.create({
     width: "90%",
     left: "5%",
     backgroundColor: "rgba(16, 33, 55, 0.9)",
-    padding: 20,
     borderRadius: 15,
   },
   legendItem: {
     color: "#fff",
-    fontSize: 18,
+    fontSize: 14,
     paddingVertical: 10,
     textAlign: "center",
   },
