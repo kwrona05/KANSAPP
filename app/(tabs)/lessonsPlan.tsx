@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { FlatList, GestureHandlerRootView } from "react-native-gesture-handler";
 import lessons from "../data/lessons.json";
 import { StyleSheet } from "react-native";
-import { wrap } from "module";
 
 export default function Calendar() {
   const [data, setData] = useState<{ day: string; lessons: any[] }[]>([]);
@@ -29,17 +28,15 @@ export default function Calendar() {
               <Text style={styles.dayTitle}>{item.day.toUpperCase()}</Text>
               <FlatList
                 data={item.lessons}
-                keyExtractor={(lessons, index) => index.toString()}
+                keyExtractor={(lesson, index) => index.toString()}
                 renderItem={({ item: lesson }) => (
-                  <View style={styles.subjectContainer}>
+                  <View style={styles.lessonContainer}>
                     {lesson.subject === "WOLNE" ? (
-                      <Text style={styles.subject}>Dzień wolny !!!</Text>
+                      <Text style={styles.lessonFree}>Dzień wolny !!!</Text>
                     ) : (
-                      <>
-                        <Text style={styles.subject}>
-                          {lesson.subject} | {lesson.time} | {lesson.category}
-                        </Text>
-                      </>
+                      <Text style={styles.lessonText}>
+                        {lesson.subject} | {lesson.time} | {lesson.category}
+                      </Text>
                     )}
                   </View>
                 )}
@@ -66,10 +63,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   dayContainer: {
-    backgroundColor: "#1E4F91",
-    padding: 15,
-    marginBottom: 10,
-    borderRadius: 10,
+    backgroundColor: "#ffffff",
+    padding: 20,
+    marginBottom: 20,
+    borderRadius: 12,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
@@ -79,10 +76,10 @@ const styles = StyleSheet.create({
   dayTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#FFD700",
+    color: "#1E4F91",
     marginBottom: 10,
   },
-  subjectContainer: {
+  lessonContainer: {
     backgroundColor: "#EAEAF5",
     paddingVertical: 15,
     paddingHorizontal: 20,
@@ -91,14 +88,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#E6007E",
     shadowColor: "#E6007E",
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.6,
-    shadowRadius: 6,
-    elevation: 5,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  subject: {
+  lessonText: {
     color: "#1E4F91",
-    fontSize: 18,
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  lessonFree: {
+    color: "#E6007E",
+    fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
   },
