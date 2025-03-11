@@ -8,12 +8,12 @@ export default function Announcement() {
   const [data, setData] = useState<{ date: string; text: string }[]>([]);
 
   useEffect(() => {
-    const itteratedData = Object.entries(announcements).map(([date, text]) => ({
+    const iteratedData = Object.entries(announcements).map(([date, text]) => ({
       date,
       text,
     }));
 
-    setData(itteratedData);
+    setData(iteratedData);
   }, []);
 
   return (
@@ -24,9 +24,9 @@ export default function Announcement() {
           data={data}
           keyExtractor={(item) => item.date}
           renderItem={({ item }) => (
-            <View style={styles.tile}>
+            <View style={styles.announcementContainer}>
               <Text style={styles.date}>{item.date}</Text>
-              <Text style={styles.tileText}>{item.text}</Text>
+              <Text style={styles.announcementText}>{item.text}</Text>
             </View>
           )}
         />
@@ -48,28 +48,25 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
-  tile: {
-    backgroundColor: "#1E4F91",
-    paddingVertical: 15,
-    paddingHorizontal: 20,
-    marginVertical: 5,
+  announcementContainer: {
+    backgroundColor: "#ffffff",
+    padding: 20,
+    marginBottom: 20,
     borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "#E6007E",
-    shadowColor: "#E6007E",
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.6,
-    shadowRadius: 6,
-    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  tileText: {
-    color: "#FFFFFF",
-    fontSize: 18,
+  announcementText: {
+    color: "#1E4F91",
+    fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
   },
   date: {
-    color: "#FFD700",
+    color: "#E6007E",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
