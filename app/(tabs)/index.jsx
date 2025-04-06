@@ -47,7 +47,7 @@ const HomeScreen = () => {
             styles.profileButton,
             pressed && styles.pressedProfile,
           ]}
-          onPress={() => navigation.navigate("Profile")}
+          onPress={() => navigation.navigate("Login")}
         >
           <Ionicons name={"person-circle-outline"} color={"#FFFF"} size={40} />
         </Pressable>
