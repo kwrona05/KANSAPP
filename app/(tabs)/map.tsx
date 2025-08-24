@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     alignItems: "center",
+    color: "#fff",
   },
   image: {
     width: width,
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "#E6007E",
+    color: "#fff",
     textAlign: "center",
     backgroundColor: "rgba(16, 33, 55, 0.8)",
     borderRadius: 10,
