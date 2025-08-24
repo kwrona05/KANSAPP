@@ -73,7 +73,10 @@ const HomeScreen = () => {
           <Text style={styles.menuItem}>Kontakt</Text>
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Teachers")}>
-          <Text style={styles.menuItem}>Koła Naukowe</Text>
+          <Text style={styles.menuItem}>Koła naukowe</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("WeeklyEvents")}>
+          <Text style={styles.menuItem}>Wydarzenia</Text>
         </Pressable>
       </Animated.View>
 
@@ -88,10 +91,10 @@ const HomeScreen = () => {
         </Pressable>
         <Pressable
           style={({ pressed }) => [styles.tile, pressed && styles.pressedTile]}
-          onPress={() => navigation.navigate("Teachers")}
+          onPress={() => navigation.navigate("WeeklyEvents")}
         >
           <View>
-            <Text style={styles.tileText}>Koła naukowe</Text>
+            <Text style={styles.tileText}>Wydarzenia</Text>
           </View>
         </Pressable>
         <Pressable
