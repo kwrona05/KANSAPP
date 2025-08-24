@@ -69,6 +69,19 @@ export default function RootLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="calendar"
+        options={{
+          title: "Wydarzenia",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "list-sharp" : "list-outline"}
+              color={"#E6007E"}
+              size={24}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
