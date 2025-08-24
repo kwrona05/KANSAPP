@@ -40,46 +40,49 @@ export default function Teachers() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F0F4FF", // Light background color
-    padding: 20,
+    backgroundColor: "#fff",
+    padding: 16,
   },
   title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#1E4F91", // Dark blue color for title
+    fontSize: 24,
+    fontWeight: "700",
+    color: "#1E4F91",
     textAlign: "center",
     marginBottom: 20,
   },
   facultyContainer: {
     marginBottom: 20,
-    padding: 15,
-    backgroundColor: "#ffffff", // White background for faculty container
-    borderRadius: 12, // Rounded corners
-    shadowColor: "#000", // Shadow for depth
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
+    paddingBottom: 12,
+    borderBottomWidth: 2,
+    borderBottomColor: "#E6007E",
   },
   facultyName: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#1E4F91", // Dark blue for faculty name
-    marginBottom: 10,
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#1E4F91",
+    marginBottom: 12,
   },
   groupContainer: {
-    marginLeft: 10,
-    marginTop: 10,
+    backgroundColor: "#f2f2f2",
+    padding: 12,
+    borderRadius: 10,
+    marginBottom: 10,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
   },
   groupName: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#E6007E", // Dark blue for group name
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#333",
+    marginBottom: 6,
   },
   lecturerName: {
-    fontSize: 16,
-    color: "#1E4F91", // Dark blue for lecturer name
-    marginLeft: 10,
-    marginBottom: 5,
+    fontSize: 15,
+    color: "#555",
+    marginLeft: 6,
+    marginBottom: 4,
   },
 });
