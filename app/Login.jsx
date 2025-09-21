@@ -4,11 +4,10 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import userData from "./data/user.json";
 import {
   GestureHandlerRootView,
-  NativeViewGestureHandler,
   Pressable,
   TextInput,
 } from "react-native-gesture-handler";
-import { useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,17 +18,18 @@ export default function Login() {
 
   const loginAuth = () => {
     if (email === userData.email && password === userData.password) {
-      navigation.navigate("Profile");
+      navigation.navigate("Profile"); // upewnij się, że masz taki ekran w routes
     } else {
       setError("Wystąpił błąd podczas logowania");
     }
   };
 
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
           <Text style={styles.title}>Zaloguj się</Text>
+
           <TextInput
             style={styles.input}
             onChangeText={setEmail}
@@ -43,10 +43,20 @@ export default function Login() {
             secureTextEntry
             value={password}
           />
+
           <Pressable style={styles.button} onPress={loginAuth}>
             <Text style={styles.buttonText}>Zaloguj się</Text>
           </Pressable>
+
           {error !== "" && <Text style={styles.error}>{error}</Text>}
+
+          {/* 🔽 Link do rejestracji */}
+          <View style={styles.registerContainer}>
+            <Text style={styles.registerText}>Nie masz konta?</Text>
+            <Link href="/Register" style={styles.registerLink}>
+              Zarejestruj się
+            </Link>
+          </View>
         </SafeAreaView>
       </SafeAreaProvider>
     </GestureHandlerRootView>
@@ -99,5 +109,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#E6007E",
     textAlign: "center",
+  },
+  registerContainer: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  registerText: {
+    fontSize: 14,
+    color: "#333",
+    marginRight: 5,
+  },
+  registerLink: {
+    fontSize: 14,
+    color: "#1E4F91",
+    fontWeight: "600",
   },
 });
